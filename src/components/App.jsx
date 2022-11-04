@@ -1,10 +1,11 @@
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Container, Header, Logo, Link } from './App.styled';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import Home from 'page/Home';
 import About from 'page/About';
 import Products from 'page/Products';
+import ProductDetails from 'page/ProductDetails';
 import NotFound from 'page/NotFound';
 
 // const StyledLink = styled(NavLink)`
@@ -37,6 +38,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path='/products/:id' element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
