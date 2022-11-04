@@ -1,7 +1,10 @@
 const NotFound = () => {
-    return (
-        <h2>Страница не найдена</h2>
-    );
-}
+  return (
+    <main style={{ textAlign: 'center' }}>
+      <b style={{ fontSize: 64 }}>404</b>
+      <p>Sorry, we couldn't find that page :(</p>
+    </main>
+  );
+};
 
 export default NotFound;
