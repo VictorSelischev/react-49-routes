@@ -3,6 +3,7 @@ import { getProductById } from "../services/fakeAPI";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  console.log(id);
   const product = getProductById(id);
   return (
     <main>

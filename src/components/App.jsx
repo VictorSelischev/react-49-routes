@@ -2,6 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { Container, Header, Logo, Link } from './App.styled';
 // import styled from 'styled-components';
 
+import { Mission } from './Mission';
+import { Team } from './Team';
+import { Reviews } from './Reviews';
+
 import Home from 'page/Home';
 import About from 'page/About';
 import Products from 'page/Products';
@@ -36,9 +40,15 @@ export const App = () => {
       </Header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+
+        <Route path="/about" element={<About />}>
+          <Route path="mission" element={<Mission />} />
+          <Route path="team" element={<Team />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+
         <Route path="/products" element={<Products />} />
-        <Route path='/products/:id' element={<ProductDetails />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
