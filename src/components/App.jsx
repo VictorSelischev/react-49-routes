@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Container, Header, Logo, Link } from './App.styled';
+// import { Container, Header, Logo, Link } from './App.styled';
 // import styled from 'styled-components';
 
 import { Mission } from './Mission';
@@ -11,6 +11,7 @@ import About from 'page/About';
 import Products from 'page/Products';
 import ProductDetails from 'page/ProductDetails';
 import NotFound from 'page/NotFound';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 
 // const StyledLink = styled(NavLink)`
 // color: black;
@@ -22,24 +23,9 @@ import NotFound from 'page/NotFound';
 
 export const App = () => {
   return (
-    <Container>
-      <Header>
-        <Logo>
-          <span role="img" aria-label="computer icon">
-            💻
-          </span>{' '}
-          GoMerch Store
-        </Logo>
-        <nav>
-          <Link to="/" end>
-            Home
-          </Link>
-          <Link to="/about">About</Link>
-          <Link to="/products">Products</Link>
-        </nav>
-      </Header>
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
 
         <Route path="/about" element={<About />}>
           <Route path="mission" element={<Mission />} />
@@ -50,7 +36,7 @@ export const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Container>
+      </Route>
+    </Routes>
   );
 };
