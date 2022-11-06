@@ -1,6 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-// import { Container, Header, Logo, Link } from './App.styled';
-// import styled from 'styled-components';
 
 import { Mission } from './Mission';
 import { Team } from './Team';
