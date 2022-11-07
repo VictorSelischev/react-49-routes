@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 // import { Mission } from './Mission';
-import { Team } from './Team';
-import { Reviews } from './Reviews';
+// import { Team } from './Team';
+// import { Reviews } from './Reviews';
 
 import Home from 'page/Home';
 import About from 'page/About';
@@ -22,6 +22,8 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 
 export const App = () => {
   const Mission = lazy(() => import('./Mission'));
+  const Team = lazy(() => import('./Team'));
+  const Reviews = lazy(() => import('./Reviews'));
 
   return (
     <Suspense fallback={<div>Loading...</div>} >
