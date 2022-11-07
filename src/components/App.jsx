@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import { Mission } from './Mission';
 import { Team } from './Team';
@@ -20,9 +20,6 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 // }`;
 
 export const App = () => {
-  const location = useLocation();
-
-  console.log(location);
 
   return (
     <Routes>

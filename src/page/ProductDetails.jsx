@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getProductById } from "../services/fakeAPI";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  console.log(id);
   const product = getProductById(id);
+
+  const location = useLocation();
+  console.log(location);
+  const backLinkHref = location.state?.from ?? "/products";
+  
   return (
     <main>
       <img src="https://via.placeholder.com/960x240" alt="" />
@@ -21,6 +25,7 @@ const ProductDetails = () => {
           praesentium ipsum quos unde voluptatum?
         </p>
       </div>
+      <Link to={backLinkHref}>Back to products</Link>;
     </main>
   );
 };

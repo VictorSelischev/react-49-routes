@@ -4,6 +4,7 @@ import { ProductList } from "../components/ProductList/ProductList";
 import { getProducts } from "../services/fakeAPI";
 
 const Products = () => {
+  
   const products = getProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   const productName = searchParams.get("name") ?? "";
